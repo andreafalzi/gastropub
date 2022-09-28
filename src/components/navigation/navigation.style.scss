@@ -5,9 +5,9 @@ $heigth: 70px;
 nav {
   position: fixed;
   top: 0;
-  background-color: $site-background;
   width: 100%;
   height: $heigth;
+  z-index: 20;
 }
 
 .navbar {
@@ -18,8 +18,12 @@ nav {
   font-family: $font-family-merriweather;
   font-weight: $font-weight-bold;
 
+  @media screen and (min-width: 900px) {
+    background-color: unset;
+  }
+
   @media screen and (min-width: 1000px) {
-    padding-inline: 3rem;
+    padding-inline: 0;
   }
 
   svg {
@@ -29,16 +33,17 @@ nav {
   ul.links {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     gap: 2rem;
     list-style: none;
     position: absolute;
     background-color: $site-background;
-    height: calc(100vh - $heigth);
-    top: $heigth;
-    right: 0;
-    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding-top: 2rem;
-    padding-left: 1rem;
     translate: -100%;
     transition: translate 300ms 300ms ease;
 
@@ -50,14 +55,16 @@ nav {
       padding-top: 0;
       width: unset;
       margin-left: auto;
+      background-color: unset;
     }
 
     .dropdown {
       display: flex;
       gap: 2rem;
       position: absolute;
-      left: 10%;
-      top: 70px;
+      translate: -50%;
+      left: 50%;
+      top: 20%;
       visibility: hidden;
       scale: 1 0;
       transform-origin: top;
@@ -68,7 +75,7 @@ nav {
         background-color: $dark-bagcground;
         gap: 1rem;
         top: 45px;
-        left: 0;
+        left: 80px;
         padding-block: 10px;
         padding-inline: 15px;
         white-space: nowrap;
