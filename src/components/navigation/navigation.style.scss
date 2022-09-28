@@ -1,0 +1,144 @@
+@import '../../styles/variables';
+
+$heigth: 70px;
+
+nav {
+  position: fixed;
+  top: 0;
+  background-color: $site-background;
+  width: 100%;
+  height: $heigth;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+
+  @media screen and (min-width: 1000px) {
+    padding-inline: 3rem;
+  }
+
+  svg {
+    fill: $color-ffffff;
+    height: 40px;
+  }
+  ul.links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    position: absolute;
+    background-color: $site-background;
+    height: calc(100vh - $heigth);
+    top: $heigth;
+    right: 0;
+    width: 100vw;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    translate: -100%;
+    transition: translate 300ms 300ms ease;
+
+    @media screen and (min-width: 900px) {
+      position: initial;
+      translate: 0%;
+      flex-direction: row;
+      height: unset;
+      padding-top: 0;
+      width: unset;
+      margin-left: auto;
+    }
+
+    .dropdown {
+      display: flex;
+      gap: 2rem;
+      position: absolute;
+      left: 10%;
+      top: 70px;
+      visibility: hidden;
+      scale: 1 0;
+      transform-origin: top;
+      transition: scale 300ms ease-in, visibility 300ms ease-in;
+
+      @media screen and (min-width: 900px) {
+        flex-direction: column;
+        background-color: $dark-bagcground;
+        gap: 1rem;
+        top: 45px;
+        left: 0;
+        padding-block: 10px;
+        padding-inline: 15px;
+        white-space: nowrap;
+      }
+
+      .dropdown__link {
+        color: $info-txt;
+        text-decoration: none;
+      }
+    }
+
+    .dropdown.show {
+      scale: 1 1;
+      visibility: visible;
+    }
+
+    li.menu-link {
+      display: flex;
+      align-items: center;
+      color: $color-ffffff;
+      font-size: 1.2rem;
+
+      span {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      svg {
+        font-size: 2rem;
+        transition: rotate 300ms 300ms ease;
+      }
+
+      svg.rotate {
+        rotate: 180deg;
+      }
+      a {
+        text-decoration: none;
+        color: $color-ffffff;
+        position: relative;
+
+        @media screen and (min-width: 900px) {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            height: 2px;
+            width: 100%;
+            background-color: $btn;
+            scale: 0;
+            transition: scale 300ms ease-in;
+          }
+
+          &:hover::before {
+            scale: 1;
+          }
+        }
+      }
+    }
+  }
+
+  ul.links.show {
+    translate: 0%;
+  }
+
+  button {
+    margin-left: auto;
+
+    @media screen and (min-width: 900px) {
+      margin-left: 2rem;
+    }
+  }
+}

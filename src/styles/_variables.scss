@@ -1,0 +1,96 @@
+/* Colors: */
+$txt-dark: #8a837d;
+$info-txt: #ccc4bc;
+$site-background: #2e2925;
+$dark-bagcground: #211e1b;
+$btn: #f1b356;
+$color-000000: #000000;
+$color-ffffff: #ffffff;
+$facebook--icon: #00c2ff;
+$instagram--icon--one: #f204d4;
+$instagram--icon--two: #ff8000;
+$twitter--icon: #8bfbff;
+
+/* Font/text values */
+$font-family-merriweather: 'Merriweather', serif;
+$font-family-crimson-pro: 'Crimson Pro', serif;
+$font-style-normal: normal;
+$font-weight-bold: bold;
+$font-weight-normal: normal;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-22: 22px;
+$font-size-48: 48px;
+$font-size-84: 84px;
+$character-spacing-0: 0px;
+$character-spacing-0-44: 0.44px;
+$character-spacing-0-45: 0.45px;
+$line-spacing-20: 20px;
+$line-spacing-28: 28px;
+$line-spacing-60: 60px;
+$line-spacing-106: 106px;
+
+/* Character Styles */
+.character-style-1 {
+  font-family: $font-family-crimson-pro;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-18;
+  line-height: $line-spacing-20;
+  letter-spacing: $character-spacing-0-45;
+  color: $info-txt;
+}
+.character-style-2 {
+  font-family: $font-family-merriweather;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-22;
+  line-height: $line-spacing-28;
+  letter-spacing: $character-spacing-0-44;
+  color: $color-ffffff;
+}
+.character-style-3 {
+  font-family: $font-family-merriweather;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-48;
+  line-height: $line-spacing-60;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.character-style-4 {
+  font-family: $font-family-merriweather;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-16;
+  line-height: $line-spacing-20;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.character-style-5 {
+  font-family: $font-family-crimson-pro;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-18;
+  line-height: $line-spacing-20;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.bodytxt-—-18pt {
+  font-family: $font-family-crimson-pro;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-18;
+  line-height: $line-spacing-20;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.heading-—-84pt {
+  font-family: $font-family-merriweather;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-84;
+  line-height: $line-spacing-106;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}

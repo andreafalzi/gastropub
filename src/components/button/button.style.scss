@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.btn__gold {
+  background-color: $btn;
+  border-radius: 25px;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 8px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
