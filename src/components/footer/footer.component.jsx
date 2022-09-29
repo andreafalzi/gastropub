@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './footer.style.scss';
 import { FaInstagram, FaFacebookF, FaTwitter, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import { DataContext } from '../../context/data.contenxt';
 
 const Footer = () => {
-  const [textData] = useContext(DataContext);
-
   return (
     <footer>
       <div className='container'>
@@ -20,12 +17,12 @@ const Footer = () => {
               <span className='footer-txt'>
                 <FaMapMarkerAlt />
                 Valhallavej 23, 8800 Viborg
-                {/* {textData[9].description} */}
+                {/* {useData[9].description} */}
               </span>
               <span className='footer-txt'>
                 <FaPhoneAlt />
                 +45 123 456
-                {/* {textData[10].description} */}
+                {/* {useData[10].description} */}
               </span>
             </div>
           </div>

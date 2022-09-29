@@ -1,7 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './menu.scss';
 
 const Menu = () => {
+  const [menuData, setMenuData] = useState([]);
+  const [imgData, setImgData] = useState([]);
+
+  useEffect(() => {
+    const url = 'https://gastropub.webexam-mcdm.dk/api/menus';
+    const options = {
+      headers: {
+        Accept: 'application/json',
+      },
+    };
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, options);
+        const json = await response.json();
+        setMenuData(json);
+      } catch (error) {
+        console.log('error', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const url = 'https://gastropub.webexam-mcdm.dk/api/images';
+    const options = {
+      headers: {
+        Accept: 'application/json',
+      },
+    };
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, options);
+        const json = await response.json();
+        setImgData(json);
+      } catch (error) {
+        console.log('error', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // `url(${imgData[9].url})`;
   const divStyle = {
     backgroundImage: 'url(/assets/images/menuHeader.jpg)',
     backgroundSize: 'cover',
@@ -18,7 +64,15 @@ const Menu = () => {
             <img src='/assets/images/soups.png' alt='supper' />
             <div className='menu-list-text'>
               <h2>Supper</h2>
-              <div className='menu-item'>
+              {menuData.slice(0, 3).map((text) => (
+                <div className='menu-item' key={text.id}>
+                  <h3>
+                    {text.name} <span>{text.price}</span>
+                  </h3>
+                  <p>{text.ingredients}</p>
+                </div>
+              ))}
+              {/* <div className='menu-item'>
                 <h3>
                   Kyllinge Nudel Suppe <span>kr. 109, -</span>
                 </h3>
@@ -41,14 +95,22 @@ const Menu = () => {
                   Bouillabaisse <span>kr. 126, -</span>
                 </h3>
                 <p>fisk og skaldyr, løg, hvidløg, persille, timian, fennikel, laurbærblade, appelsinskal.</p>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='menu-list'>
             <img src='/assets/images/salads.png' alt='salater' />
             <div className='menu-list-text'>
               <h2>Salater</h2>
-              <div className='menu-item'>
+              {menuData.slice(4, 7).map((text) => (
+                <div className='menu-item' key={text.id}>
+                  <h3>
+                    {text.name} <span>{text.price}</span>
+                  </h3>
+                  <p>{text.ingredients}</p>
+                </div>
+              ))}
+              {/* <div className='menu-item'>
                 <h3>
                   Vilde ris salat <span>kr. 78, -</span>
                 </h3>
@@ -71,14 +133,22 @@ const Menu = () => {
                   Fennikel, krabbe og appelsinsalat <span>kr. 112, -</span>
                 </h3>
                 <p>Fennikel, appelsin, mint, avocado, grøn chili, krappekød, oliven.</p>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='menu-list'>
             <img src='/assets/images/main.png' alt='hovedretter' />
             <div className='menu-list-text'>
               <h2>Hovedretter</h2>
-              <div className='menu-item'>
+              {menuData.slice(8, 11).map((text) => (
+                <div className='menu-item' key={text.id}>
+                  <h3>
+                    {text.name} <span>{text.price}</span>
+                  </h3>
+                  <p>{text.ingredients}</p>
+                </div>
+              ))}
+              {/* <div className='menu-item'>
                 <h3>
                   Kylling Milanese med spaghetti <span>kr. 156, -</span>
                 </h3>
@@ -101,7 +171,7 @@ const Menu = () => {
                   Peruviansk laks med quinoa <span>kr. 210, -</span>
                 </h3>
                 <p>Avocado, laksefilet, Peruvian Chili, rød quinoa, cherrytomater, forårsløg, koriander.</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
