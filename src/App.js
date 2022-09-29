@@ -6,6 +6,7 @@ import Home from './routes/home/home';
 import Kontakt from './routes/kontakt/kontakt';
 import Layout from './routes/layout/layout';
 import Menu from './routes/menu/menu';
+import Team from './routes/team/team';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='omos' element={<About />} />
-          {/* <Route path='team' element={<Team />} /> */}
+          <Route path='team' element={<Team />} />
           <Route path='menu' element={<Menu />} />
           {/* <Route path='galleri' element={<Galleri />} /> */}
           {/* <Route path='nyheder' element={<Nyheder />} /> */}

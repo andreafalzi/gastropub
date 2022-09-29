@@ -1,0 +1,113 @@
+@import '../../styles/variables';
+
+.team-hero {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $color-ffffff;
+    font-family: $font-family-merriweather;
+    font-weight: $font-weight-bold;
+
+    @media screen and (min-width: 500px) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.chef-section {
+  background-color: $dark-bagcground;
+  padding-inline: 1rem;
+  padding-block: 3rem;
+}
+
+.chef-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+
+  h2 {
+    font-family: $font-family-merriweather;
+    font-weight: $font-weight-bold;
+    font-size: 30px;
+    color: $color-ffffff;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-family: $font-family-crimson-pro;
+    font-weight: $font-weight-bold;
+    font-size: 18px;
+    color: $info-txt;
+    line-height: 32px;
+  }
+
+  img {
+    margin-inline: auto;
+    width: 100%;
+
+    @media screen and (min-width: 900px) {
+      width: 40%;
+    }
+  }
+}
+
+.crew-section {
+  background-color: $site-background;
+  padding-inline: 1rem;
+  padding-block: 3rem;
+}
+
+.crew-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .crew-card {
+    text-align: center;
+    h3 {
+      font-family: $font-family-merriweather;
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+      color: $color-ffffff;
+    }
+
+    span {
+      font-family: $font-family-crimson-pro;
+      font-size: 15px;
+      color: $txt-dark;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p {
+      font-family: $font-family-crimson-pro;
+      font-size: 15px;
+      color: $info-txt;
+      width: 60%;
+      margin-inline: auto;
+      line-height: 25px;
+    }
+
+    img {
+      clip-path: circle(50% at 50% 50%);
+      width: 50%;
+      margin-bottom: 1rem;
+      @media screen and (min-width: 900px) {
+        width: 150px;
+      }
+    }
+  }
+}
