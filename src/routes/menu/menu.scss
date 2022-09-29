@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+
+.menu-hero {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $color-ffffff;
+    font-family: $font-family-merriweather;
+    font-weight: $font-weight-bold;
+
+    @media screen and (min-width: 500px) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.menu-section {
+  background-color: $site-background;
+  padding-inline: 1rem;
+  padding-block: 3rem;
+
+  .menu-list {
+    @media screen and (min-width: 900px) {
+      display: flex;
+      gap: 4rem;
+    }
+
+    h2 {
+      font-family: $font-family-merriweather;
+      font-size: 2rem;
+      color: $color-ffffff;
+      margin-bottom: 2rem;
+    }
+
+    .menu-list-text {
+      width: 100%;
+    }
+
+    .menu-item {
+      border-top: 2px solid $info-txt;
+      padding-block: 2rem;
+
+      &:last-child {
+        border-bottom: 2px solid $info-txt;
+        margin-bottom: 4rem;
+      }
+
+      h3 {
+        color: $color-ffffff;
+        font-family: $font-family-merriweather;
+        font-weight: $font-weight-bold;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-family: $font-family-crimson-pro;
+        color: $info-txt;
+        font-weight: $font-weight-bold;
+        width: 70%;
+      }
+
+      span {
+        float: right;
+      }
+    }
+
+    img {
+      display: none;
+
+      @media screen and (min-width: 900px) {
+        display: block;
+        height: 15vw;
+        max-height: 200px;
+      }
+    }
+  }
+}

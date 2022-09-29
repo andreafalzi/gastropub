@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+input {
+  background-color: $dark-bagcground;
+  color: $info-txt;
+  border-radius: 20px;
+  border: 1px solid $info-txt;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+}

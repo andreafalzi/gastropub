@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+textarea {
+  background-color: $dark-bagcground;
+  color: $info-txt;
+  border-radius: 20px;
+  border: 1px solid $info-txt;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  height: 200px;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+}

@@ -5,7 +5,6 @@ import { DataContext } from '../../context/data.contenxt';
 
 const Footer = () => {
   const [textData] = useContext(DataContext);
-  console.log(textData);
 
   return (
     <footer>
@@ -20,10 +19,12 @@ const Footer = () => {
             <div className='kontakt-box'>
               <span className='footer-txt'>
                 <FaMapMarkerAlt />
+                Valhallavej 23, 8800 Viborg
                 {/* {textData[9].description} */}
               </span>
               <span className='footer-txt'>
                 <FaPhoneAlt />
+                +45 123 456
                 {/* {textData[10].description} */}
               </span>
             </div>
