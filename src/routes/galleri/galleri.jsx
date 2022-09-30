@@ -1,31 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Carousel } from 'react-carousel-minimal';
 import './galleri.scss';
 
 const Galleri = () => {
-  const [imgData, setImgData] = useState([]);
-  useEffect(() => {
-    const url = 'https://gastropub.webexam-mcdm.dk/api/images';
-    const options = {
-      headers: {
-        Accept: 'application/json',
-      },
-    };
+  // const [imgData, setImgData] = useState([]);
+  // const [filteredImgData, setFilteredImgData] = useState(imgData);
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, options);
-        const json = await response.json();
-        setImgData(json);
-      } catch (error) {
-        console.log('error', error);
-      }
-    };
+  // useEffect(() => {
+  //   const url = 'https://gastropub.webexam-mcdm.dk/api/images';
+  //   const options = {
+  //     headers: {
+  //       Accept: 'application/json',
+  //     },
+  //   };
 
-    fetchData();
-  }, []);
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(url, options);
+  //       const json = await response.json();
+  //       setImgData(json);
+  //     } catch (error) {
+  //       console.log('error', error);
+  //     }
+  //   };
 
-  console.log(imgData);
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const newSortedData = imgData.slice(14, 21);
+  //   setFilteredImgData(newSortedData);
+  // }, [imgData]);
+
+  // // console.log(filteredImgData);
+
+  // const galleriArr2 = [];
+
+  // const slideshowArray = (images) => {
+  //   filteredImgData.forEach((el) => {
+  //     images.push({ caption: el.name, image: el.url });
+  //   });
+  // };
+
+  // slideshowArray(galleriArr2);
 
   const galleriArr = [
     { caption: 'table', image: '/assets/galleri/galleri01.jpg' },

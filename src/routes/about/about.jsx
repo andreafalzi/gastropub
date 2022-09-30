@@ -7,31 +7,27 @@ const About = () => {
   // const [textData, setTextData] = useState([]);
 
   // const urlImg = 'https://gastropub.webexam-mcdm.dk/api/images';
-  // const urlText = 'https://gastropub.webexam-mcdm.dk/api/texts';
   // // Function to collect data
 
   // useEffect(() => {
+  //   const url = 'https://gastropub.webexam-mcdm.dk/api/texts';
   //   const options = {
   //     headers: {
   //       Accept: 'application/json',
   //     },
   //   };
-  //   fetch(urlImg, options)
-  //     .then((response) => response.json())
-  //     .then((response) => setImgData(response))
-  //     .catch((err) => console.error(err));
-  // }, []);
 
-  // useEffect(() => {
-  //   const options = {
-  //     headers: {
-  //       Accept: 'application/json',
-  //     },
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(url, options);
+  //       const json = await response.json();
+  //       setTextData(json);
+  //     } catch (error) {
+  //       console.log('error', error);
+  //     }
   //   };
-  //   fetch(urlText, options)
-  //     .then((response) => response.json())
-  //     .then((response) => setTextData(response))
-  //     .catch((err) => console.error(err));
+
+  //   fetchData();
   // }, []);
 
   const divStyle = {
@@ -48,6 +44,7 @@ const About = () => {
         <div className='container'>
           <div className='about-container'>
             <p className='about-txt'>
+              {/* {textData[0].description} */}
               Hos Gastropub lægger vi stor vægt på frisk mad komponeret fra bunden med sæsonens råvarer. I restauranten serveres der krogmodnet kød. I køkkenet bruger vi den moderne inspiration i en sammenblanding med det klassiske køkken, når vi anretter tallerknerne.
               <br />
               <br />

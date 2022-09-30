@@ -7,6 +7,7 @@ import Home from './routes/home/home';
 import Kontakt from './routes/kontakt/kontakt';
 import Layout from './routes/layout/layout';
 import Menu from './routes/menu/menu';
+import Nyheder from './routes/nyheder/nyheder';
 import Team from './routes/team/team';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route path='team' element={<Team />} />
           <Route path='menu' element={<Menu />} />
           <Route path='galleri' element={<Galleri />} />
-          {/* <Route path='nyheder' element={<Nyheder />} /> */}
+          <Route path='nyheder' element={<Nyheder />} />
           <Route path='kontakt' element={<Kontakt />} />
         </Route>
       </Routes>

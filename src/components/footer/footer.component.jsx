@@ -3,6 +3,45 @@ import './footer.style.scss';
 import { FaInstagram, FaFacebookF, FaTwitter, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
+  // const [useData, setUseData] = useState([]);
+  // const [filteredUseData, setFilteredUseData] = useState(useData);
+
+  // useEffect(() => {
+  //   const url = 'https://gastropub.webexam-mcdm.dk/api/texts';
+  //   const options = {
+  //     headers: {
+  //       Accept: 'application/json',
+  //     },
+  //   };
+
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(url, options);
+  //       const json = await response.json();
+  //       setUseData(json);
+  //     } catch (error) {
+  //       console.log('error', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const newSortedData = useData.slice(9, 11);
+  //   setFilteredUseData(newSortedData);
+  // }, [useData]);
+
+  // const footerData = [];
+
+  // const footerArray = (data) => {
+  //   filteredUseData.forEach((el) => {
+  //     data.push({ description: el.description });
+  //   });
+  // };
+
+  // footerArray(footerData);
+
   return (
     <footer>
       <div className='container'>
@@ -17,12 +56,12 @@ const Footer = () => {
               <span className='footer-txt'>
                 <FaMapMarkerAlt />
                 Valhallavej 23, 8800 Viborg
-                {/* {useData[9].description} */}
+                {/* {footerData[0].description} */}
               </span>
               <span className='footer-txt'>
                 <FaPhoneAlt />
                 +45 123 456
-                {/* {useData[10].description} */}
+                {/* {footerData[1].description} */}
               </span>
             </div>
           </div>

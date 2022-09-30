@@ -3,7 +3,7 @@ import './menu.scss';
 
 const Menu = () => {
   const [menuData, setMenuData] = useState([]);
-  const [imgData, setImgData] = useState([]);
+  // const [imgData, setImgData] = useState([]);
 
   useEffect(() => {
     const url = 'https://gastropub.webexam-mcdm.dk/api/menus';
@@ -26,26 +26,26 @@ const Menu = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const url = 'https://gastropub.webexam-mcdm.dk/api/images';
-    const options = {
-      headers: {
-        Accept: 'application/json',
-      },
-    };
+  // useEffect(() => {
+  //   const url = 'https://gastropub.webexam-mcdm.dk/api/images';
+  //   const options = {
+  //     headers: {
+  //       Accept: 'application/json',
+  //     },
+  //   };
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, options);
-        const json = await response.json();
-        setImgData(json);
-      } catch (error) {
-        console.log('error', error);
-      }
-    };
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(url, options);
+  //       const json = await response.json();
+  //       setImgData(json);
+  //     } catch (error) {
+  //       console.log('error', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   // `url(${imgData[9].url})`;
   const divStyle = {

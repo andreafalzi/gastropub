@@ -94,7 +94,7 @@ const Navigation = () => {
       </div>
       <div className='container'>
         <div className='navbar'>
-          <Link to={'/'}>
+          <Link to={'/'} onClick={() => setIsDropdownOpen(false)}>
             <Logo className='logo' />
           </Link>
           <ul className={`${isOpen ? 'show' : ''} links`}>
