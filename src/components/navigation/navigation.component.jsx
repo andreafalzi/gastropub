@@ -30,25 +30,68 @@ const Navigation = () => {
     window.addEventListener('scroll', changeBackground);
   });
 
+  const defaultForm = {
+    name: '',
+    phone: '',
+    date: '',
+    message: '',
+  };
+  const [formValue, setFormValue] = useState(defaultForm);
+  const [isAppear, setIsAppear] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormValue({ ...formValue, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    fetch('https://gastropub.webexam-mcdm.dk/api/contacts', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formValue.name,
+        phone: formValue.phone,
+        message: formValue.message,
+      }),
+    });
+    setIsModalOpen(false);
+    setFormValue(defaultForm);
+    setIsAppear(true);
+    setTimeout(() => {
+      setIsAppear(false);
+    }, 4000);
+  };
+
   const handleMenu = () => {
     setIsOpen(!isOpen);
     setIsDropdownOpen(false);
   };
 
+  const { name, phone, date, message } = formValue;
+
   return (
     <nav className={navbar ? 'scroll' : ''}>
-      <div className='modal'>
-        <MdClose />
-        <h3>Bestil Bord</h3>
-        <form>
-          <Input type='text' placeholder='Navn *' required />
-          <Input type='tel' placeholder='Telefon *' required />
-          <Input type='date' placeholder='Bestillings Dato *' required />
-          <TextArea type='text' placeholder='Besked *' required />
-          <Button>Send</Button>
+      <span className={`message ${isAppear ? 'appear' : ''}`}>Din besked er blevet sendt. Tak og god dag 😊</span>
+      <div className={`backdrop ${isModalOpen ? 'show' : ''}`} />
+      <div className={`modal ${isModalOpen ? 'show' : ''}`}>
+        <h3>
+          Bestil Bord
+          <MdClose onClick={() => setIsModalOpen(false)} />
+        </h3>
+        <form onSubmit={handleSubmit}>
+          <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} />
+          <Input type='tel' placeholder='Telefon *' required name='phone' value={phone} onChange={handleChange} />
+          <Input type='date' placeholder='Bestillings Dato *' required name='date' value={date} onChange={handleChange} />
+          <TextArea type='text' placeholder='Besked *' required name='message' value={message} onChange={handleChange} />
+          <Button type='submit'>Send</Button>
         </form>
       </div>
-      <div className='backdrop' />
       <div className='container'>
         <div className='navbar'>
           <Link to={'/'}>
@@ -83,7 +126,7 @@ const Navigation = () => {
               <Link to={'kontakt'}>Kontakt</Link>
             </li>
           </ul>
-          <Button onClick={() => alert('bestil')}>Bestil Bord</Button>
+          <Button onClick={() => setIsModalOpen(true)}>Bestil Bord</Button>
           {isOpen ? <MdClose className='hamburger-menu' onClick={handleMenu} /> : <MdMenu className='hamburger-menu' onClick={handleMenu} />}
         </div>
       </div>
