@@ -45,13 +45,13 @@ const Galleri = () => {
   // slideshowArray(galleriArr2);
 
   const galleriArr = [
-    { caption: 'table', image: '/assets/galleri/galleri01.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri02.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri03.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri04.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri05.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri06.jpg' },
-    { caption: 'table', image: '/assets/galleri/galleri07.jpg' },
+    { caption: 'Main Room', image: '/assets/galleri/galleri01.jpg' },
+    { caption: 'Gala Room', image: '/assets/galleri/galleri02.jpg' },
+    { caption: 'Wedding Room', image: '/assets/galleri/galleri03.jpg' },
+    { caption: 'Dining Room', image: '/assets/galleri/galleri04.jpg' },
+    { caption: 'Red Room', image: '/assets/galleri/galleri05.jpg' },
+    { caption: 'Balcony', image: '/assets/galleri/galleri06.jpg' },
+    { caption: 'Aquarium Room', image: '/assets/galleri/galleri07.jpg' },
   ];
 
   const captionStyle = {
