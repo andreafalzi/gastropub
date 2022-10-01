@@ -21,6 +21,10 @@
   // border: 3px solid #333;
 }
 
+body {
+  background-color: $dark-bagcground;
+}
+
 .container {
   width: 100%;
   @media screen and (min-width: 900px) {
