@@ -85,9 +85,9 @@ const Navigation = () => {
           <MdClose onClick={() => setIsModalOpen(false)} />
         </h3>
         <form onSubmit={handleSubmit}>
-          <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} />
-          <Input type='tel' placeholder='Telefon *' required name='phone' value={phone} onChange={handleChange} />
-          <Input type='date' placeholder='Bestillings Dato *' required name='date' value={date} onChange={handleChange} />
+          <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} pattern='([A-Za-z ])+' title='Kun bogstaver' />
+          <Input type='tel' placeholder='Telefon *' required name='phone' value={phone} onChange={handleChange} pattern='[0-9]{8,11}' title='Kun numre og det skal være et gyldigt dansk telefonnummer' />
+          <Input type='date' required name='date' value={date} onChange={handleChange} />
           <TextArea type='text' placeholder='Besked *' required name='message' value={message} onChange={handleChange} />
           <Button type='submit'>Send</Button>
         </form>

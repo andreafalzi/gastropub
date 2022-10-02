@@ -64,8 +64,8 @@ const Kontakt = ({ ...props }) => {
               <h3>Kære kunde</h3>
               <p>Du er altid velkommen til at kontakte os For spørgsmål angående Deklarations indhold, allegener, eller økologiske forhold. Andre spørgsmål til Gastropub er også velkomne her.</p>
               <form onSubmit={handleSubmit}>
-                <Input type='text' required placeholder='Navn *' name='name' value={name} onChange={handleChange} />
-                <Input type='tel' required placeholder='Telefon *' name='phone' value={phone} onChange={handleChange} />
+                <Input type='text' required placeholder='Navn *' name='name' value={name} onChange={handleChange} pattern='([A-Za-z ])+' title='Kun bogstaver' />
+                <Input type='tel' required placeholder='Telefon *' name='phone' value={phone} onChange={handleChange} pattern='[0-9]{8,11}' title='Kun numre og det skal være et gyldigt dansk telefonnummer' />
                 <TextArea type='tel' required placeholder='Besked *' name='message' value={message} onChange={handleChange} />
                 <Button type='submit'>Send</Button>
               </form>

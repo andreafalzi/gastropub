@@ -1,25 +1,25 @@
 @import '../../styles/variables';
 
-h1 {
-  font-size: 4rem;
-  color: $color-ffffff;
-  font-family: $font-family-merriweather;
-  font-weight: $font-weight-bold;
-  margin-bottom: 2rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-  color: $color-ffffff;
-  font-family: $font-family-merriweather;
-  font-weight: $font-weight-bold;
-  margin-bottom: 2rem;
-}
-
 .error404 {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  h1 {
+    font-size: 4rem;
+    color: $color-ffffff;
+    font-family: $font-family-merriweather;
+    font-weight: $font-weight-bold;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    color: $color-ffffff;
+    font-family: $font-family-merriweather;
+    font-weight: $font-weight-bold;
+    margin-bottom: 2rem;
+  }
 }

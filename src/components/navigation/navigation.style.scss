@@ -168,6 +168,7 @@ nav {
     .dropdown {
       display: flex;
       gap: 2rem;
+      width: max-content;
       position: absolute;
       translate: -50%;
       left: 50%;
@@ -197,6 +198,7 @@ nav {
     .dropdown.show {
       scale: 1 1;
       visibility: visible;
+      width: max-content;
     }
 
     li.menu-link {
