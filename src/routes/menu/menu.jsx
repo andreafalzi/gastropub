@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './menu.scss';
+import { motion } from 'framer-motion';
 
-const Menu = () => {
+const Menu = ({ ...props }) => {
   const [menuData, setMenuData] = useState([]);
   // const [imgData, setImgData] = useState([]);
 
@@ -54,7 +55,7 @@ const Menu = () => {
     backgroundPosition: 'center',
   };
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='menu-hero overlay-60'>
         <h1>Menu</h1>
       </div>
@@ -176,7 +177,7 @@ const Menu = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

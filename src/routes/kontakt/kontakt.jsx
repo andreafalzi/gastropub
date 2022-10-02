@@ -4,8 +4,9 @@ import './kontakt.scss';
 import { FaPhoneAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa';
 import Input from '../../components/input/input.component';
 import TextArea from '../../components/textarea/textarea.component';
+import { motion } from 'framer-motion';
 
-const Kontakt = () => {
+const Kontakt = ({ ...props }) => {
   const defaultForm = {
     name: '',
     phone: '',
@@ -51,7 +52,7 @@ const Kontakt = () => {
 
   const { name, phone, message } = formValue;
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='kontakt-hero overlay-60'>
         <h1>Kontakt</h1>
       </div>
@@ -89,7 +90,7 @@ const Kontakt = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

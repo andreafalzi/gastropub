@@ -1,12 +1,9 @@
 @import '../../styles/variables';
 
-$heigth: 70px;
-
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: $heigth;
   z-index: 20;
   background-color: unset;
   transition: background-color 300ms ease;
@@ -123,7 +120,7 @@ nav {
   display: flex;
   align-items: center;
   padding-inline: 1rem;
-  padding-top: 1rem;
+  padding-block: 1rem;
   font-family: $font-family-merriweather;
   font-weight: $font-weight-bold;
 
@@ -206,7 +203,11 @@ nav {
       display: flex;
       align-items: center;
       color: $color-ffffff;
-      font-size: 1.2rem;
+      font-size: 2rem;
+
+      @media screen and (min-width: 900px) {
+        font-size: 1.2rem;
+      }
 
       span {
         display: flex;

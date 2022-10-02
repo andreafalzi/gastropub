@@ -1,8 +1,9 @@
 import React from 'react';
 import './about.scss';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-const About = () => {
+const About = ({ ...props }) => {
   // const [imgData, setImgData] = useState([]);
   // const [textData, setTextData] = useState([]);
 
@@ -36,7 +37,7 @@ const About = () => {
     backgroundPosition: 'center',
   };
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='about-hero overlay-60'>
         <h1>Om GastroPub</h1>
       </div>
@@ -73,7 +74,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

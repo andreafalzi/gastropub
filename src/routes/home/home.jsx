@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../components/button/button.component';
 import './home.scss';
-const Home = () => {
+import { motion } from 'framer-motion';
+
+const Home = ({ ...props }) => {
   const divStyle = {
     paddingInline: '3rem',
     paddingBlock: '1rem',
   };
   return (
-    <main>
+    <motion.main {...props}>
       <section className='section gastropub overlay-60'>
         <div className='container'>
           <div className='section-box'>
@@ -42,7 +44,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

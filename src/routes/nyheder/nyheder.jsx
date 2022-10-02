@@ -5,8 +5,9 @@ import TextArea from '../../components/textarea/textarea.component';
 import { FaRegClock } from 'react-icons/fa';
 import { IoMdChatbubbles } from 'react-icons/io';
 import './nyheder.scss';
+import { motion } from 'framer-motion';
 
-const Nyheder = () => {
+const Nyheder = ({ ...props }) => {
   const defaultForm = {
     name: '',
     message: '',
@@ -90,7 +91,7 @@ const Nyheder = () => {
 
   const { name, message } = formValue;
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='news-hero overlay-60'>
         <h1>Nyheder</h1>
       </div>
@@ -173,7 +174,7 @@ const Nyheder = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

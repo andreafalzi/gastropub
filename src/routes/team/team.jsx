@@ -1,14 +1,15 @@
 import React from 'react';
 import './team.scss';
+import { motion } from 'framer-motion';
 
-const Team = () => {
+const Team = ({ ...props }) => {
   const divStyle = {
     backgroundImage: 'url(/assets/images/StaffHeaderFood.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='team-hero overlay-60'>
         <h1>Vores Team</h1>
       </div>
@@ -53,7 +54,7 @@ const Team = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

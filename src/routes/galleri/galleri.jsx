@@ -1,8 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-carousel-minimal';
 import './galleri.scss';
+import { motion } from 'framer-motion';
 
-const Galleri = () => {
+const Galleri = ({ ...props }) => {
   // const [imgData, setImgData] = useState([]);
   // const [filteredImgData, setFilteredImgData] = useState(imgData);
 
@@ -68,7 +69,7 @@ const Galleri = () => {
     backgroundPosition: 'center',
   };
   return (
-    <main>
+    <motion.main {...props}>
       <div style={divStyle} className='galleri-hero overlay-60'>
         <h1>Galleri</h1>
       </div>
@@ -109,7 +110,7 @@ const Galleri = () => {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 
