@@ -14,12 +14,12 @@ import Error404 from '../../routes/404Error/404Error';
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route index element={<Home initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
+        <Route index element={<Home initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.1, delay: 0.5 } }} />} />
         <Route path='omos' element={<About initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
         <Route path='team' element={<Team initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
-        <Route path='menu' element={<Menu initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
+        <Route path='menu' element={<Menu initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.1, delay: 0.5 } }} />} />
         <Route path='galleri' element={<Galleri initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
         <Route path='nyheder' element={<Nyheder initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
         <Route path='kontakt' element={<Kontakt initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />} />
