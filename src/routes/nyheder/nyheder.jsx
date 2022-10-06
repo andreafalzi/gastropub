@@ -6,6 +6,7 @@ import { FaRegClock } from 'react-icons/fa';
 import { IoMdChatbubbles } from 'react-icons/io';
 import './nyheder.scss';
 import { motion } from 'framer-motion';
+import Footer from '../../components/footer/footer.component';
 
 const Nyheder = ({ ...props }) => {
   const defaultForm = {
@@ -91,39 +92,40 @@ const Nyheder = ({ ...props }) => {
 
   const { name, message } = formValue;
   return (
-    <motion.main {...props}>
-      <div style={divStyle} className='news-hero overlay-60'>
-        <h1>Nyheder</h1>
-      </div>
-      <section className='menu-news-section'>
-        <div className='container'>
-          <h2>Nyheder på menuen</h2>
-          <div className='menu-news-item'>
-            <img src='/assets/images/dessert01.jpg' alt='dessert' />
-            <div className='menu-item-text'>
-              <h3>Royal Belgisk Vaffel & mascarpone is med lime</h3>
-              <p>Denne udsøgte vaffel af ultralet luftig dej med større firkanter, dybe lommer og bagt med syrnet gær. Vaffelen ligger godt sammen med den florlette is, rørt med mascarpone fra det sydlige italien. Den frugtholdige syrlige smag af lime afrunder desserten, hvor sødmen Holdes på plads af friske skovbær og sauce karamel.</p>
+    <>
+      <motion.main {...props}>
+        <div style={divStyle} className='news-hero overlay-60'>
+          <h1>Nyheder</h1>
+        </div>
+        <section className='menu-news-section'>
+          <div className='container'>
+            <h2>Nyheder på menuen</h2>
+            <div className='menu-news-item'>
+              <img src='/assets/images/dessert01.jpg' alt='dessert' />
+              <div className='menu-item-text'>
+                <h3>Royal Belgisk Vaffel & mascarpone is med lime</h3>
+                <p>Denne udsøgte vaffel af ultralet luftig dej med større firkanter, dybe lommer og bagt med syrnet gær. Vaffelen ligger godt sammen med den florlette is, rørt med mascarpone fra det sydlige italien. Den frugtholdige syrlige smag af lime afrunder desserten, hvor sødmen Holdes på plads af friske skovbær og sauce karamel.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className='news-section'>
-        <div className='container'>
-          <h2>Vores kunders mening</h2>
-          <div className='news-list'>
-            {sortedReviewsData.map((text) => (
-              <div className='news-item' key={text.id}>
-                <h3>{text.name}</h3>
-                <span>
-                  <FaRegClock /> {new Date(text.created_at).toLocaleDateString('da-DA', options)}
-                </span>
-                <div className='news-item-text'>
-                  <IoMdChatbubbles />
-                  <p>{text.message}</p>
+        </section>
+        <section className='news-section'>
+          <div className='container'>
+            <h2>Vores kunders mening</h2>
+            <div className='news-list'>
+              {sortedReviewsData.map((text) => (
+                <div className='news-item' key={text.id}>
+                  <h3>{text.name}</h3>
+                  <span>
+                    <FaRegClock /> {new Date(text.created_at).toLocaleDateString('da-DA', options)}
+                  </span>
+                  <div className='news-item-text'>
+                    <IoMdChatbubbles />
+                    <p>{text.message}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {/* <div className='news-item'>
+              ))}
+              {/* <div className='news-item'>
               <h3>Susanne Larsen</h3>
               <span>
                 <FaRegClock /> 23. Januar 2019
@@ -163,18 +165,20 @@ const Nyheder = ({ ...props }) => {
                 <p>Vi var 4 veninder til frokost, og vi havde en fantastisk 1.5 time. Maden var virkelig god, og Pernille fandt en super vin til os.</p>
               </div>
             </div> */}
+            </div>
+            <div className='comment-box'>
+              <h3>Fortæl os om dit besøg</h3>
+              <form onSubmit={handleSubmit}>
+                <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} />
+                <TextArea type='text' placeholder='Besked *' required name='message' value={message} onChange={handleChange} />
+                <Button type='submit'>Send</Button>
+              </form>
+            </div>
           </div>
-          <div className='comment-box'>
-            <h3>Fortæl os om dit besøg</h3>
-            <form onSubmit={handleSubmit}>
-              <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} />
-              <TextArea type='text' placeholder='Besked *' required name='message' value={message} onChange={handleChange} />
-              <Button type='submit'>Send</Button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </motion.main>
+        </section>
+        <Footer />
+      </motion.main>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './menu.scss';
 import { motion } from 'framer-motion';
+import Footer from '../../components/footer/footer.component';
 
 const Menu = ({ ...props }) => {
   const [menuData, setMenuData] = useState([]);
@@ -55,25 +56,26 @@ const Menu = ({ ...props }) => {
     backgroundPosition: 'center',
   };
   return (
-    <motion.main {...props}>
-      <div style={divStyle} className='menu-hero overlay-60'>
-        <h1>Menu</h1>
-      </div>
-      <section className='menu-section'>
-        <div className='container'>
-          <div className='menu-list'>
-            <img src='/assets/images/soups.png' alt='supper' />
-            <div className='menu-list-text'>
-              <h2>Supper</h2>
-              {menuData.slice(0, 3).map((text) => (
-                <div className='menu-item' key={text.id}>
-                  <h3>
-                    {text.name} <span>{text.price}</span>
-                  </h3>
-                  <p>{text.ingredients}</p>
-                </div>
-              ))}
-              {/* <div className='menu-item'>
+    <>
+      <motion.main {...props}>
+        <div style={divStyle} className='menu-hero overlay-60'>
+          <h1>Menu</h1>
+        </div>
+        <section className='menu-section'>
+          <div className='container'>
+            <div className='menu-list'>
+              <img src='/assets/images/soups.png' alt='supper' />
+              <div className='menu-list-text'>
+                <h2>Supper</h2>
+                {menuData.slice(0, 3).map((text) => (
+                  <div className='menu-item' key={text.id}>
+                    <h3>
+                      {text.name} <span>{text.price}</span>
+                    </h3>
+                    <p>{text.ingredients}</p>
+                  </div>
+                ))}
+                {/* <div className='menu-item'>
                 <h3>
                   Kyllinge Nudel Suppe <span>kr. 109, -</span>
                 </h3>
@@ -97,21 +99,21 @@ const Menu = ({ ...props }) => {
                 </h3>
                 <p>fisk og skaldyr, løg, hvidløg, persille, timian, fennikel, laurbærblade, appelsinskal.</p>
               </div> */}
+              </div>
             </div>
-          </div>
-          <div className='menu-list'>
-            <img src='/assets/images/salads.png' alt='salater' />
-            <div className='menu-list-text'>
-              <h2>Salater</h2>
-              {menuData.slice(4, 7).map((text) => (
-                <div className='menu-item' key={text.id}>
-                  <h3>
-                    {text.name} <span>{text.price}</span>
-                  </h3>
-                  <p>{text.ingredients}</p>
-                </div>
-              ))}
-              {/* <div className='menu-item'>
+            <div className='menu-list'>
+              <img src='/assets/images/salads.png' alt='salater' />
+              <div className='menu-list-text'>
+                <h2>Salater</h2>
+                {menuData.slice(4, 7).map((text) => (
+                  <div className='menu-item' key={text.id}>
+                    <h3>
+                      {text.name} <span>{text.price}</span>
+                    </h3>
+                    <p>{text.ingredients}</p>
+                  </div>
+                ))}
+                {/* <div className='menu-item'>
                 <h3>
                   Vilde ris salat <span>kr. 78, -</span>
                 </h3>
@@ -135,21 +137,21 @@ const Menu = ({ ...props }) => {
                 </h3>
                 <p>Fennikel, appelsin, mint, avocado, grøn chili, krappekød, oliven.</p>
               </div> */}
+              </div>
             </div>
-          </div>
-          <div className='menu-list'>
-            <img src='/assets/images/main.png' alt='hovedretter' />
-            <div className='menu-list-text'>
-              <h2>Hovedretter</h2>
-              {menuData.slice(8, 11).map((text) => (
-                <div className='menu-item' key={text.id}>
-                  <h3>
-                    {text.name} <span>{text.price}</span>
-                  </h3>
-                  <p>{text.ingredients}</p>
-                </div>
-              ))}
-              {/* <div className='menu-item'>
+            <div className='menu-list'>
+              <img src='/assets/images/main.png' alt='hovedretter' />
+              <div className='menu-list-text'>
+                <h2>Hovedretter</h2>
+                {menuData.slice(8, 11).map((text) => (
+                  <div className='menu-item' key={text.id}>
+                    <h3>
+                      {text.name} <span>{text.price}</span>
+                    </h3>
+                    <p>{text.ingredients}</p>
+                  </div>
+                ))}
+                {/* <div className='menu-item'>
                 <h3>
                   Kylling Milanese med spaghetti <span>kr. 156, -</span>
                 </h3>
@@ -173,11 +175,13 @@ const Menu = ({ ...props }) => {
                 </h3>
                 <p>Avocado, laksefilet, Peruvian Chili, rød quinoa, cherrytomater, forårsløg, koriander.</p>
               </div> */}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </motion.main>
+        </section>
+        <Footer />
+      </motion.main>
+    </>
   );
 };
 

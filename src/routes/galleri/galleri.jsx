@@ -2,6 +2,7 @@ import React from 'react';
 import { Carousel } from 'react-carousel-minimal';
 import './galleri.scss';
 import { motion } from 'framer-motion';
+import Footer from '../../components/footer/footer.component';
 
 const Galleri = ({ ...props }) => {
   // const [imgData, setImgData] = useState([]);
@@ -69,48 +70,51 @@ const Galleri = ({ ...props }) => {
     backgroundPosition: 'center',
   };
   return (
-    <motion.main {...props}>
-      <div style={divStyle} className='galleri-hero overlay-60'>
-        <h1>Galleri</h1>
-      </div>
-      <section className='galleri-section'>
-        <div className='container'>
-          <div style={{ textAlign: 'center' }}>
-            <div
-              style={{
-                padding: '0 20px',
-              }}
-            >
-              <Carousel
-                data={galleriArr}
-                time={4000}
-                width='850px'
-                height='500px'
-                captionStyle={captionStyle}
-                radius='0'
-                slideNumber={true}
-                slideNumberStyle={slideNumberStyle}
-                captionPosition='bottom'
-                automatic={true}
-                dots={true}
-                pauseIconColor='white'
-                pauseIconSize='40px'
-                slideBackgroundColor='darkgrey'
-                slideImageFit='cover'
-                thumbnails={true}
-                thumbnailWidth='100px'
+    <>
+      <motion.main {...props}>
+        <div style={divStyle} className='galleri-hero overlay-60'>
+          <h1>Galleri</h1>
+        </div>
+        <section className='galleri-section'>
+          <div className='container'>
+            <div style={{ textAlign: 'center' }}>
+              <div
                 style={{
-                  textAlign: 'center',
-                  maxWidth: '850px',
-                  maxHeight: '500px',
-                  margin: '40px auto',
+                  padding: '0 20px',
                 }}
-              />
+              >
+                <Carousel
+                  data={galleriArr}
+                  time={4000}
+                  width='850px'
+                  height='500px'
+                  captionStyle={captionStyle}
+                  radius='0'
+                  slideNumber={true}
+                  slideNumberStyle={slideNumberStyle}
+                  captionPosition='bottom'
+                  automatic={true}
+                  dots={true}
+                  pauseIconColor='white'
+                  pauseIconSize='40px'
+                  slideBackgroundColor='darkgrey'
+                  slideImageFit='cover'
+                  thumbnails={true}
+                  thumbnailWidth='100px'
+                  style={{
+                    textAlign: 'center',
+                    maxWidth: '850px',
+                    maxHeight: '500px',
+                    margin: '40px auto',
+                  }}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </motion.main>
+        </section>
+        <Footer />
+      </motion.main>
+    </>
   );
 };
 

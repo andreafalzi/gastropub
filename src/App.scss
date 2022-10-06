@@ -23,6 +23,8 @@
 
 body {
   background-color: $dark-bagcground;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .container {
