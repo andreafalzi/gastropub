@@ -177,6 +177,7 @@ nav {
       scale: 1 0;
       transform-origin: top;
       transition: scale 300ms ease-in, visibility 300ms ease-in;
+      font-size: 1rem;
 
       @media screen and (min-width: 900px) {
         flex-direction: column;
@@ -205,7 +206,7 @@ nav {
       display: flex;
       align-items: center;
       color: $color-ffffff;
-      font-size: 2rem;
+      font-size: 1.5rem;
 
       @media screen and (min-width: 900px) {
         font-size: 1.2rem;

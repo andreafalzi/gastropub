@@ -49,7 +49,7 @@ function App() {
   return (
     <DataProvider>
       <Navigation />
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} style={pageStyle} />} />
           <Route path='omos' element={<About initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} style={pageStyle} />} />

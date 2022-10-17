@@ -10,6 +10,7 @@ const Home = ({ ...props }) => {
     paddingInline: '3rem',
     paddingBlock: '1rem',
   };
+
   return (
     <>
       <motion.main {...props}>
