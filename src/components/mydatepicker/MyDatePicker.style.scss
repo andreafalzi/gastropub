@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.picker-container .react-date-picker {
+  background-color: $dark-bagcground;
+  color: $info-txt;
+  border-radius: 20px;
+  border: 1px solid $info-txt;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+  display: inherit;
+}
+
+.picker-container .react-date-picker__wrapper {
+  border: none;
+}
+
+.picker-container .react-date-picker__button svg {
+  stroke: $info-txt;
+}
+
+.picker-container .react-date-picker__button:enabled:focus .react-date-picker__button__icon,
+.picker-container .react-date-picker__button:enabled:hover .react-date-picker__button__icon {
+  stroke: $btn;
+}
+
+input {
+  background-color: $dark-bagcground;
+  color: $info-txt;
+  border-radius: 20px;
+  border: 1px solid $info-txt;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  font-family: $font-family-merriweather;
+  font-weight: $font-weight-bold;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $dark-bagcground inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $info-txt !important;
+}

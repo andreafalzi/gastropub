@@ -6,6 +6,7 @@ import { MdArrowDropDown, MdMenu, MdClose } from 'react-icons/md';
 import './navigation.style.scss';
 import Input from '../input/input.component';
 import TextArea from '../textarea/textarea.component';
+import MyDatePicker from '../mydatepicker/MyDatePicker.component';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +34,10 @@ const Navigation = () => {
   const defaultForm = {
     name: '',
     phone: '',
-    date: '',
+    date: new Date(),
     message: '',
   };
+
   const [formValue, setFormValue] = useState(defaultForm);
   const [isAppear, setIsAppear] = useState(false);
 
@@ -44,6 +46,7 @@ const Navigation = () => {
 
     setFormValue({ ...formValue, [name]: value });
   };
+  console.log(formValue);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -87,7 +90,7 @@ const Navigation = () => {
         <form onSubmit={handleSubmit}>
           <Input type='text' placeholder='Navn *' required name='name' value={name} onChange={handleChange} pattern='([A-Za-z ])+' title='Kun bogstaver' />
           <Input type='tel' placeholder='Telefon *' required name='phone' value={phone} onChange={handleChange} pattern='[0-9]{8,11}' title='Kun numre og det skal være et gyldigt dansk telefonnummer' />
-          <Input type='date' required name='date' value={date} onChange={handleChange} />
+          <MyDatePicker required={true} name='date' value={date} handle={(e) => setFormValue({ ...formValue, date: e })} />
           <TextArea type='text' placeholder='Besked *' required name='message' value={message} onChange={handleChange} />
           <Button type='submit'>Send</Button>
         </form>
